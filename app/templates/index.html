@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <title>Geocoder</title>
+    <head>
+        <link href="../static/main.css" rel="stylesheet">
+    </head>
+        <body>
+            <div class="container">
+                <h1>MKAD Distance</h1>
+                <h3>Please fill the entries to get the distance between the address and the MKAD</h3>
+                <div class="message">
+                    {{text | safe}}
+                </div>
+                <form action="{{url_for('src.success')}}" method="POST">
+                    <input title="Address" placeholder="Enter the address" name="address" required><br>
+                    <button type="submit"> Submit </button>
+                </form>
+            </div>
+        </body>
+</html>  
