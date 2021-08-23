@@ -30,7 +30,11 @@ def get_coordinates(address):
     number_of_results = len(
         r_json['response']['GeoObjectCollection']['featureMember'])
 
-    coordinates = [r_json['response']['GeoObjectCollection']['featureMember'][0]['GeoObject']['Point']['pos']]
+    coordinates = list()
+
+    for n in range(number_of_results):
+        coordinates.append(r_json['response']['GeoObjectCollection']
+                           ['featureMember'][n]['GeoObject']['Point']['pos'])
 
     return coordinates, number_of_results_found
 
